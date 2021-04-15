@@ -35,8 +35,6 @@ public class LoginServlet extends HttpServlet {
         
         HttpSession session = request.getSession(true);
         
-        Date createTime = new Date (session.getCreationTime());
-        
         if (session.isNew()) {
         }
         
