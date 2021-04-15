@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         if (session.isNew()) {
+            
         }
         
         try (PrintWriter out = response.getWriter()) {
