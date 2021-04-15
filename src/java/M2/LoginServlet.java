@@ -52,6 +52,7 @@ public class LoginServlet extends HttpServlet {
             out.println("<title>Registering with Sessions</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<h1>Registering with Sessions</h1>");
             out.println("<ul>");
             out.println("<li>First Name: " +nom+ "</li>");
             out.println("<li>Last Name: "+cognom+ "</li>");
