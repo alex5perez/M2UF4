@@ -35,9 +35,7 @@ public class LoginServlet extends HttpServlet {
         
         HttpSession session = request.getSession(true);
         
-        if (session.isNew()) {
-            
-        }
+        
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -53,9 +51,14 @@ public class LoginServlet extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Registering with Sessions</h1>");
             out.println("<ul>");
-            out.println("<li>First Name: " +nom+ "</li>");
-            out.println("<li>Last Name: "+cognom+ "</li>");
-            out.println("<li>Email Address: "+email+ "</li>");
+                if (session.isNew()) {
+                    out.println("Unknown");
+                    request.getRequestDispatcher("offline.html").include(request,response);
+                }else{
+                    out.println("<li>First Name: " +nom+ "</li>");
+                    out.println("<li>Last Name: "+cognom+ "</li>");
+                    out.println("<li>Email Address: "+email+ "</li>");
+                }
             out.println("</ul>");
             out.println("</body>");
             out.println("</html>");
