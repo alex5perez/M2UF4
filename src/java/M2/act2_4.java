@@ -41,8 +41,6 @@ public class act2_4 extends HttpServlet {
         (List<String>)session.getAttribute("previousItems");
       if (previousItems == null) {
         previousItems = new ArrayList<String>();
-        int nouItem = 1;
-
       }
         if ((newItem != null) &&
             (!newItem.trim().equals(""))) {
