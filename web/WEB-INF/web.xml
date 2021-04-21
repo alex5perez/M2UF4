@@ -12,6 +12,18 @@
         <servlet-name>act1_3</servlet-name>
         <servlet-class>M2.act1_3</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>M2.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>act2_3</servlet-name>
+        <servlet-class>M2.act2_3</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>act2_4</servlet-name>
+        <servlet-class>M2.act2_4</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>act1</servlet-name>
         <url-pattern>/act1</url-pattern>
@@ -23,6 +35,18 @@
     <servlet-mapping>
         <servlet-name>act1_3</servlet-name>
         <url-pattern>/act1_3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>act2_3</servlet-name>
+        <url-pattern>/act2_3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>act2_4</servlet-name>
+        <url-pattern>/act2_4</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
