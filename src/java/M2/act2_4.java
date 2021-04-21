@@ -42,15 +42,11 @@ public class act2_4 extends HttpServlet {
       if (previousItems == null) {
         previousItems = new ArrayList<String>();
       }
-        if ((newItem != null) &&
+      if ((newItem != null) &&
             (!newItem.trim().equals(""))) {
-            previousItems.add(newItem+"(1)");
-
+            previousItems.add(newItem);
       }
 
-      
-      
-      
       session.setAttribute("previousItems", previousItems);
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
@@ -63,16 +59,16 @@ public class act2_4 extends HttpServlet {
                   "<HEAD><TITLE>" + title + "</TITLE></HEAD>\n" +
                   "<BODY BGCOLOR=\"#FDF5E6\">\n" +
                   "<H1>" + title + "</H1>");
-      if (previousItems.size() == 0) {
-        out.println("<I>No items</I>");
-      } else {
-        out.println("<UL>");
-        for(String item: previousItems) {
-          out.println("  <LI>" + item);
-        }
-        out.println("</UL>");
-      }
-      out.println("</BODY></HTML>");
-    }
-  }
+      synchronized(previousItems) {
+          if (newItem != null) {
+              previousItems.add(newItem);
+                } if (previousItems.size() == 0) {         
+                    out.println("<I>No items</I>");       
+                } else {         
+                    out.println("<UL>");         
+                        for(int i=0; i<previousItems.size(); i++) {          
+                            out.println("<LI>" + (String)previousItems.get(i));         
+                        }   out.println("</UL>");       
+                    }   }   out.println("</BODY></HTML>");   
+    }   } 
 }
