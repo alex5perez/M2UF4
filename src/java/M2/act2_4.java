@@ -36,23 +36,20 @@ public class act2_4 extends HttpServlet {
     HttpSession session = request.getSession();
     synchronized(session) {
       @SuppressWarnings("unchecked")
-              
+      String newItem = request.getParameter("newItem");
       List<String> previousItems =
         (List<String>)session.getAttribute("previousItems");
       if (previousItems == null) {
         previousItems = new ArrayList<String>();
-        previousItems.add("One Item");
+        int nouItem = 1;
+
       }
-      String newItem = request.getParameter("newItem");
-        int numItems = previousItems.size();
         if ((newItem != null) &&
             (!newItem.trim().equals(""))) {
+            previousItems.add(newItem+"(1)");
 
-          for (int i=0; i<numItems; i++) {
-              previousItems.add(newItem+"("+numItems+")");
-
-        }
       }
+
       
       
       
