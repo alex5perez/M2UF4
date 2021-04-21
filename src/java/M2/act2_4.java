@@ -31,22 +31,31 @@ public class act2_4 extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-  public void doPost (HttpServletRequest request,
-                      HttpServletResponse response)
+  public void doPost (HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     HttpSession session = request.getSession();
     synchronized(session) {
       @SuppressWarnings("unchecked")
+              
       List<String> previousItems =
         (List<String>)session.getAttribute("previousItems");
       if (previousItems == null) {
         previousItems = new ArrayList<String>();
+        previousItems.add("One Item");
       }
       String newItem = request.getParameter("newItem");
-      if ((newItem != null) &&
-          (!newItem.trim().equals(""))) {
-        previousItems.add(newItem);
+        int numItems = previousItems.size();
+        if ((newItem != null) &&
+            (!newItem.trim().equals(""))) {
+
+          for (int i=0; i<numItems; i++) {
+              previousItems.add(newItem+"("+numItems+")");
+
+        }
       }
+      
+      
+      
       session.setAttribute("previousItems", previousItems);
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
