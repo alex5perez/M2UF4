@@ -32,7 +32,7 @@ public class act2_3 extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String url=request.getParameter("url");
+            String url = request.getParameter("url");
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -40,11 +40,13 @@ public class act2_3 extends HttpServlet {
             out.println("<title>Pages Linked From</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet act2_3 at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet act2_3 " + "</h1>");
             out.println("<input type=\"url\" name=\"url\" id=\"url\" placeholder=\"https://example.com\" pattern=\"https://.*\" size=\"30\" required>");
             out.println("<ul>");
             out.println("<li>");
-            out.println("" +url+ "");
+            if (url != null) {
+               out.println("" +url+ ""); 
+            }
             out.println("</li>");
             out.println("</ul>");
             out.println("</body>");
