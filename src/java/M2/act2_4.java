@@ -44,7 +44,6 @@ public class act2_4 extends HttpServlet {
       }
       if ((newItem != null) &&
             (!newItem.trim().equals(""))) {
-            previousItems.add(newItem);
       }
 
       session.setAttribute("previousItems", previousItems);
