@@ -47,7 +47,7 @@ public class act2_4 extends HttpServlet {
       }
       
       
-      
+      numItem.add(1);
       session.setAttribute("previousItems", previousItems);
       session.setAttribute("numItem", numItem);
       response.setContentType("text/html");
@@ -69,7 +69,7 @@ public class act2_4 extends HttpServlet {
                 } else {         
                     out.println("<UL>");         
                         for(int i=0; i<previousItems.size(); i++) {          
-                            out.println("<LI>" + (String)previousItems.get(i)+"("+1+")");         
+                            out.println("<LI>" + (String)previousItems.get(i)+"("+numItem.get(i)+")");         
                         }   out.println("</UL>");       
                     }   }   out.println("</BODY></HTML>");   
     }   } 
