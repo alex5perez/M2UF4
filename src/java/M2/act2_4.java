@@ -43,11 +43,11 @@ public class act2_4 extends HttpServlet {
         (List<Integer>)session.getAttribute("numItem");
       if (previousItems == null) {
         previousItems = new ArrayList<String>();
+        numItem = new ArrayList<Integer>();
       }
-      if (previousItems == null) {
-          numItem = new ArrayList<Integer>();
-      }
-
+      
+      
+      
       session.setAttribute("previousItems", previousItems);
       session.setAttribute("numItem", numItem);
       response.setContentType("text/html");
@@ -63,18 +63,14 @@ public class act2_4 extends HttpServlet {
                   "<H1>" + title + "</H1>");
       synchronized(previousItems) {
           if (newItem != null) {
-              for (int j=0; j<previousItems.size(); j++) {
-                  
-              
               previousItems.add(newItem);
                 } if (previousItems.size() == 0) {         
                     out.println("<I>No items</I>");       
                 } else {         
                     out.println("<UL>");         
                         for(int i=0; i<previousItems.size(); i++) {          
-                            out.println("<LI>" + (String)previousItems.get(i));         
+                            out.println("<LI>" + (String)previousItems.get(i)+"("+1+")");         
                         }   out.println("</UL>");       
                     }   }   out.println("</BODY></HTML>");   
-           }
     }   } 
 }
