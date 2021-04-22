@@ -24,6 +24,10 @@
         <servlet-name>act2_4</servlet-name>
         <servlet-class>M2.act2_4</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ColorUtils</servlet-name>
+        <servlet-class>M2.ColorUtils</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>act1</servlet-name>
         <url-pattern>/act1</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>act2_4</servlet-name>
         <url-pattern>/act2_4</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ColorUtils</servlet-name>
+        <url-pattern>/ColorUtils</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
