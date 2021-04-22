@@ -39,14 +39,17 @@ public class act2_4 extends HttpServlet {
       String newItem = request.getParameter("newItem");
       List<String> previousItems =
         (List<String>)session.getAttribute("previousItems");
+      List<Integer> numItem =
+        (List<Integer>)session.getAttribute("numItem");
       if (previousItems == null) {
         previousItems = new ArrayList<String>();
       }
-      if ((newItem != null) &&
-            (!newItem.trim().equals(""))) {
+      if (previousItems == null) {
+          numItem = new ArrayList<Integer>();
       }
 
       session.setAttribute("previousItems", previousItems);
+      session.setAttribute("numItem", numItem);
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
       String title = "Items Purchased";
@@ -60,6 +63,9 @@ public class act2_4 extends HttpServlet {
                   "<H1>" + title + "</H1>");
       synchronized(previousItems) {
           if (newItem != null) {
+              for (int j=0; j<previousItems.size(); j++) {
+                  
+              
               previousItems.add(newItem);
                 } if (previousItems.size() == 0) {         
                     out.println("<I>No items</I>");       
@@ -69,5 +75,6 @@ public class act2_4 extends HttpServlet {
                             out.println("<LI>" + (String)previousItems.get(i));         
                         }   out.println("</UL>");       
                     }   }   out.println("</BODY></HTML>");   
+           }
     }   } 
 }
