@@ -15,10 +15,10 @@
 previousColor. You need a local variable. --%>
 <%
 String bgColor = request.getParameter("bgColor");
-    if ((bgColor != null) && (!bgColor.trim().equals(""))) {
+    if ((bgColor == null) || (bgColor.trim().equals(""))) { 
         previousColor = bgColor;
     } else {
-        bgColor = previousColor;
+        bgColor = "WHITE"; 
     }
 %>
     <BODY BGCOLOR="<%=bgColor%>">
