@@ -31,17 +31,18 @@ public class act4 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
             String foreground = request.getParameter("foregroundColor");
             String background = request.getParameter("backgroundColor");
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<title>Show Colors(1)</title>");
             out.println("<style>");
-            out.println("body {");
+            out.println("body{");
             out.println("background" + background);
             out.println("forecolor" + foreground);
-            out.println("<title>Show Colors(1)</title>");  
             out.println("}");
             out.println("</style>");
             out.println("</head>");
