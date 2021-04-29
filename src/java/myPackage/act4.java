@@ -41,8 +41,8 @@ public class act4 extends HttpServlet {
             out.println("<title>Show Colors(1)</title>");
             out.println("<style>");
             out.println("body{");
-            out.println("background" + background);
-            out.println("forecolor" + foreground);
+            out.println("background:" + background + ";");
+            out.println("color:" + foreground + ";");
             out.println("}");
             out.println("</style>");
             out.println("</head>");
