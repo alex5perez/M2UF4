@@ -18,8 +18,8 @@ public class ColorBean {
         
     }
     
-    public static String foregroundColor = "black";
-    public static String backgroundColor = "white";
+    public static String foregroundColor;
+    public static String backgroundColor;
 
     public String getForegroundColor() {
         return foregroundColor;
